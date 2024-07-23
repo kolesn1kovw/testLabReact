@@ -1,0 +1,97 @@
+@import "./variables.scss";
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1246px !important;
+  width: 100% !important;
+  padding: 0 15px !important;
+  margin: 0 auto !important;
+
+  @media (max-width: 1024px) {
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 1.6rem;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.section__title {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 5.6rem;
+  color: $black;
+
+  @media (max-width: 576px) {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 4rem;
+  border-radius: 4px;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  cursor: pointer;
+  transition:
+    background-color 0.25s linear,
+    border-color 0.25s linear;
+
+  &.btn_white {
+    background-color: $light-gray;
+    border: 1px solid $mid-gray;
+    color: $black;
+    &:hover {
+      @media (hover: hover) {
+        background-color: $light;
+        border-color: $mid-gray;
+      }
+    }
+  }
+
+  &.btn_primary {
+    background-color: $primary;
+    color: $light;
+    &:hover {
+      @media (hover: hover) {
+        background-color: #397dff;
+      }
+    }
+  }
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.offset-section {
+  margin-bottom: 80px;
+  @media (max-width: 768px) {
+    margin-bottom: 56px;
+  }
+}
+
+.lock-scroll {
+  overflow: hidden !important;
+}

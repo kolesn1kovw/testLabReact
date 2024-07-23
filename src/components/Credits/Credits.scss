@@ -1,0 +1,63 @@
+@import "../../variables.scss";
+
+.credits {
+  &__content {
+    align-items: center;
+    column-gap: 32px;
+
+    @media (max-width: 670px) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    max-width: 592px;
+    width: 100%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+      flex: 1;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 1.8rem;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 4rem;
+    color: $black;
+
+    @media (max-width: 768px) {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+
+    @media (max-width: 670px) {
+      margin-bottom: 2.7rem;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    font-weight: 400;
+    color: $dark-gray;
+    @media (max-width: 670px) {
+      text-align: center;
+    }
+  }
+
+  &__img {
+    @media (max-width: 768px) {
+      flex: 1;
+    }
+
+    @media (max-width: 670px) {
+      margin-bottom: 0.7rem;
+      order: -1;
+    }
+  }
+}

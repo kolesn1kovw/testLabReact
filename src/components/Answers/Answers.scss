@@ -1,0 +1,50 @@
+@import "../../variables.scss";
+
+.answers {
+  padding: 6.8rem 0;
+  background-color: $extra-light-gray;
+
+  @media (max-width: 576px) {
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 320px) {
+    padding: 1.6rem 0;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 37px 32px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      gap: 20px 0;
+    }
+    .answer {
+      &__title {
+        margin: 0;
+        margin-bottom: 1.7rem;
+        font-size: 1.8rem;
+        line-height: 3.2rem;
+        font-weight: 600;
+        color: $black;
+
+        @media (max-width: 576px) {
+          margin-bottom: 1.4rem;
+        }
+      }
+
+      &__description {
+        margin: 0;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        font-weight: 400;
+        color: $black;
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+@import "../../variables.scss";
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 32px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    gap: 30px 24px;
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px 0;
+  }
+
+  .input-container {
+    height: 64px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__input {
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 2.5rem 1.5rem 0;
+    height: 100%;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    color: $black;
+    background-color: $extra-light-gray;
+    border: 2px solid $extra-light-gray;
+    border-radius: 4px;
+    transition:
+      border-color 0.25s linear,
+      background-color 0.25s linear;
+
+    &:focus {
+      border-color: $mid-gray;
+      background-color: $light;
+    }
+  }
+
+  .placeholder {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    color: $dark-gray;
+    pointer-events: none;
+    transform-origin: 0 50%;
+    transition:
+      transform 200ms,
+      color 200ms;
+  }
+
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-10px);
+    font-size: 1.4rem;
+  }
+
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+
+  .input:focus ~ .placeholder {
+    color: $gray;
+  }
+
+  // Checkbox
+
+  .custom-checkbox__input {
+    position: absolute;
+    appearance: none;
+  }
+
+  .custom-checkbox__text {
+    margin: 0;
+    position: relative;
+    padding-left: 3.8rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    font-weight: 400;
+    color: $black;
+  }
+
+  .custom-checkbox__text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    border: 2px solid $mid-gray;
+    border-radius: 4px;
+    transform: translateY(-50%);
+    transition:
+      border-color 0.25s linear,
+      background-color 0.25s linear;
+  }
+
+  .custom-checkbox__text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 16px;
+    height: 12px;
+    background-image: url("../img/svg/mark.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-50%);
+  }
+
+  .custom-checkbox__input:checked + .custom-checkbox__text::before {
+    border-color: $primary;
+    background-color: $primary;
+  }
+
+  .invalid-text {
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    color: $red;
+  }
+  .icon-status {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+
+  .valid {
+    .icon-valid {
+      display: block;
+    }
+  }
+
+  .invalid {
+    .input {
+      border-color: $red;
+    }
+    .invalid-text {
+      display: block;
+      margin-top: 0.5rem;
+    }
+    .icon-invalid {
+      display: block;
+    }
+  }
+
+  button {
+    padding: 2rem 4rem !important;
+  }
+
+  button[disabled] {
+    background-color: #abcae6;
+    pointer-events: none;
+  }
+}

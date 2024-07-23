@@ -1,0 +1,151 @@
+@import "../../variables.scss";
+
+.reviews {
+  padding: 5.7rem 0 4.5rem;
+  background-color: $extra-light-gray;
+
+  @media (max-width: 1024px) {
+    padding: 3.3rem 0 4.5rem;
+  }
+
+  &__title {
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
+
+  &__slider-wrapper {
+    position: relative;
+    padding: 0 5rem;
+    @media (max-width: 1024px) {
+      padding: 0;
+    }
+  }
+
+  .reviews__slider {
+    position: relative;
+    padding-bottom: 70px;
+
+    .swiper-wrapper {
+      align-items: stretch;
+
+      .swiper-slide {
+        box-sizing: border-box !important;
+        height: auto !important;
+      }
+    }
+  }
+
+  .review {
+    height: 100%;
+    padding: 2.2rem;
+    background-color: $light;
+    border-radius: 8px;
+    box-shadow: 0px 5px 24px 0px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.25s linear;
+    cursor: pointer;
+
+    &:hover {
+      @media (hover: hover) {
+        box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &__author {
+      margin-bottom: 2rem;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    &__author-photo {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &__author-name {
+      margin: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 2.4rem;
+      color: var(--black);
+    }
+
+    &__author-location {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      font-weight: 400;
+      color: $dark-gray;
+    }
+
+    &__text {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      font-weight: 400;
+      color: $black;
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none;
+  }
+
+  .swiper-button-next {
+    transform: rotate(180deg);
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    width: 32px;
+    height: 32px;
+    svg {
+      path {
+        transition: fill 0.25s linear;
+      }
+    }
+
+    &:hover {
+      @media (hover: hover) {
+        svg {
+          path {
+            fill: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  .reviews__slider-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -20px;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 7px) !important;
+    width: 8px;
+    height: 8px;
+    background-color: $mid-gray;
+    opacity: 1;
+    &.swiper-pagination-bullet-active {
+      background-color: $primary;
+    }
+  }
+}

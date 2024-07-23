@@ -1,0 +1,108 @@
+@import "../../variables.scss";
+
+.faq {
+  .parentSprite {
+    display: none;
+  }
+  &__title {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .szh-accordion__item-btn {
+    width: 100%;
+  }
+
+  .accordion-single {
+    padding: 0 10.4rem;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1024px) {
+      padding: 0;
+    }
+  }
+
+  .accordion-single-item {
+    position: relative;
+    border-top: 1px solid #eceff2;
+    cursor: pointer;
+
+    .accordion-single-title {
+      margin: 0;
+      padding: 2.4rem 0;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      gap: 15px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: 3.2rem;
+      color: var(--black);
+      cursor: pointer;
+      transition: color 0.25s linear;
+
+      @media (max-width: 576px) {
+        padding: 1.6rem 0;
+      }
+    }
+
+    .icon-state {
+      flex-shrink: 0;
+      position: relative;
+      bottom: -4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid $black;
+      transition:
+        border-color 0.25s linear,
+        transform 0.25s linear;
+
+      .icon {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &:hover {
+      @media (hover: hover) {
+        .accordion-single-title {
+          color: $primary;
+        }
+
+        .icon-state {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  .szh-accordion__item-panel p {
+    margin: 0;
+    margin-bottom: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    font-weight: 400;
+    color: $dark-gray;
+
+    @media (max-width: 576px) {
+      margin-bottom: 1.6rem;
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+    }
+  }
+
+  .szh-accordion__item--expanded {
+    .accordion-single-title {
+      color: $primary;
+    }
+    .icon-state {
+      border-color: $primary;
+      transform: rotate(45deg);
+    }
+  }
+}
