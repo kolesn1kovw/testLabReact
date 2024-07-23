@@ -8,10 +8,10 @@ export const mockSlice = createSlice({
   name: 'testSlice',
   initialState,
   reducers: {
-    test: (state, action) => {},
+    // test: (state, action) => {},
   },
 });
 
-export const { test } = mockSlice.actions;
+// export const { test } = mockSlice.actions;
 
 export default mockSlice.reducer;
